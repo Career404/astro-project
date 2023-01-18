@@ -1,4 +1,20 @@
 ---
+let string = 'This is a string';
+let toggle = true;
+let intervalId = setInterval(changeString, 4000);
+
+function changeString() {
+  if (toggle) {
+    string = 'This is another string';
+    toggle = false;
+  } else {
+    string = 'This is a string';
+    toggle = true;
+  }
+}
+setTimeout(() => {
+  clearInterval(intervalId);
+}, 60000);
 ---
 
 <html lang="en">
@@ -11,7 +27,15 @@
   </head>
   <body>
     <h1>Astro</h1>
-    <h1>Hello world</h1>
+    <h2>Hello world</h2>
+    <p>
+      I declared a variable called string and it equals to: {string}
+    </p>
+    <p>
+      As of now the code I wrote to change the variable every 4 seconds does not
+      change the rendered string
+    </p>
+    <a href="./blog/post1"><h3>Look at some markdown!</h3></a>
     <a href="./about">This is another page</a>
   </body>
 </html>
