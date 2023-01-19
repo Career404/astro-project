@@ -1,8 +1,11 @@
 ---
 import '../styles/global.css'
+import Header from '../components/Header.astro'
+import Footer from '../components/Footer.astro'
+
 
 let string = 'This is a string';
-let toggle = true;
+/* let toggle = true;
 let intervalId = setInterval(changeString, 4000);
 
 function changeString() {
@@ -16,7 +19,7 @@ function changeString() {
 }
 setTimeout(() => {
   clearInterval(intervalId);
-}, 60000);
+}, 60000); */
 ---
 
 <html lang="en">
@@ -26,24 +29,24 @@ setTimeout(() => {
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>Astro</title>
-    <style>
-      h1 {
-        color: purple;
-        font-size: 4rem;
-      }
-    </style>
   </head>
   <body>
     <h1>Astro</h1>
-    <h2>Hello world</h2>
+    <Header />
     <p>
       I declared a variable called string and it equals to: {string}
     </p>
     <p>
       As of now the code I wrote to change the variable every 4 seconds does not
-      change the rendered string
+      change the rendered string, because that code is executed once at build-time <br/>
+      Though the server console logs out a new string every 4 seconds... <br/>
+      console logs out a new string even if the "console.log" is commented out
     </p>
     <a href="./blog/post1"><h3>Look at some markdown!</h3></a>
     <a href="./about">This is another page</a>
+    <Footer />
+    <script>
+      import '../scripts/menu.js'
+    </script>
   </body>
 </html>

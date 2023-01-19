@@ -1,0 +1,16 @@
+---
+import Social from './Social.astro';
+---
+<style>
+footer {
+  position: fixed;
+  bottom: 0;
+  width: calc(100% - 10px);
+  height: 50px;
+}
+</style>
+<footer>
+  <hr />
+  <Social platform={null} username={null} />
+  <Social platform="github" username="Career404" />
+</footer>
