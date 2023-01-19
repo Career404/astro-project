@@ -1,8 +1,7 @@
 ---
 import '../styles/global.css'
-import Header from '../components/Header.astro'
-import Footer from '../components/Footer.astro'
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = 'Hello Astro-world'
 
 let string = 'This is a string';
 /* let toggle = true;
@@ -22,17 +21,7 @@ setTimeout(() => {
 }, 60000); */
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
-  </head>
-  <body>
-    <h1>Astro</h1>
-    <Header />
+<BaseLayout pageTitle={pageTitle}>
     <p>
       I declared a variable called string and it equals to: {string}
     </p>
@@ -44,9 +33,4 @@ setTimeout(() => {
     </p>
     <a href="./blog/post1"><h3>Look at some markdown!</h3></a>
     <a href="./about">This is another page</a>
-    <Footer />
-    <script>
-      import '../scripts/menu.js'
-    </script>
-  </body>
-</html>
+</BaseLayout>
