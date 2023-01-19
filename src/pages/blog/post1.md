@@ -24,4 +24,4 @@ Welcome to my _new blog_ about learning Astro! Here, I will share my learning jo
 I will finish the Astro tutorial, and then I'll make something useful out of this project. Watch out for more!
 
 ## [go back](./../)
-_relative links work in md %)_
+_relative links work in md - it is translated to html anyways %)_

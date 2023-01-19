@@ -3,6 +3,9 @@ import BaseLayout from "./BaseLayout.astro";
 const { frontmatter } = Astro.props;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
+  <ul style="display: flex; flex-flow: row wrap; justify-content: space-evenly;">
+    {frontmatter.tags.map(tag=><a href={`../tags/${tag}`}><li>{tag}</li></a>)}
+  </ul>
 <p>Written by {frontmatter.author} on {frontmatter.pubDate}</p>
 <img src={frontmatter.image.url} width="300" alt={frontmatter.image.alt} />
 <slot />
